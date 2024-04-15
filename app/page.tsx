@@ -1,10 +1,10 @@
-import { AboutContent } from '@/components/about-content';
+import { About } from '@/components/about';
 
 
 export default function Home() {
   return (
       <main>
-          <AboutContent />
+          <About />
       </main>
   );
 }

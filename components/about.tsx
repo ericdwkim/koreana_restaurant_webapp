@@ -2,7 +2,7 @@ import React from "react";
 import Image from 'next/image';
 import aboutContentImage from '../public/about-content.jpg';
 
-export const AboutContent = () => {
+export const About = () => {
     return (
         <div className="container mx-auto px-4">
             <div className="text-center my-12">
@@ -30,4 +30,4 @@ export const AboutContent = () => {
     );
 };
 
-export default AboutContent;
+export default About;
