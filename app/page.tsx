@@ -1,9 +1,10 @@
-// import Image from "next/image";
+import { AboutContent } from '@/components/about-content';
+
 
 export default function Home() {
   return (
-      <div>
-        <span>hello world</span>
-      </div>
+      <main>
+          <AboutContent />
+      </main>
   );
 }
