@@ -1,7 +1,7 @@
 import React from "react";
-import OthersHero from "../components/OthersHero/OthersHero";
-import AboutContent from "../components/AboutContent/AboutContent";
-import TableBook from "../components/TableBook/TableBook";
+import {OthersHero} from "@/components/OthersHero";
+import {AboutContent} from "@/components/AboutContent";
+import {TableBook} from "@/components/TableBook";
 function About() {
   return (
     <div>

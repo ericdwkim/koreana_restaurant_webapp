@@ -4,7 +4,7 @@ import React from "react";
 import Image from 'next/image';
 import aboutContentImage from '../public/about-content.jpg';
 
-export const About = () => {
+export const AboutContent = () => {
     return (
         <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center p-4">
@@ -32,4 +32,4 @@ export const About = () => {
     );
 };
 
-export default About;
+export default AboutContent;

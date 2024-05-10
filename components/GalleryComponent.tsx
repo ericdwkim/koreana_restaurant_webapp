@@ -9,7 +9,7 @@ interface Image {
   thumbnail: string;
 }
 
-export const Gallery = () => {
+export const GalleryComponent = () => {
   const folderPath = "../gallery/"; // Replace with your folder path
 
   const imagePaths = [
@@ -81,4 +81,5 @@ export const Gallery = () => {
   );
 };
 
-export default Gallery;
+export default GalleryComponent;
+

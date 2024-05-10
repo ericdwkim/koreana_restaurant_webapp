@@ -14,7 +14,7 @@ interface MenuItem {
   price: string;
 }
 
-export const Menu = () => {
+export const MenuItem = () => {
   const [activeType, setActiveType] = useState<string>("Meat Entrées");
 
   const handleTypeClick = (type: string) => {
@@ -61,4 +61,5 @@ export const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenuItem;
+

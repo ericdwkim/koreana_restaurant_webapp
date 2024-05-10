@@ -1,6 +1,6 @@
 import React from "react";
-import OthersHero from "../components/OthersHero/OthersHero";
-import GalleryComponent from "../components/Gallery/Gallery";
+import {OthersHero} from "@/components/OthersHero";
+import {GalleryComponent} from "@/components/GalleryComponent";
 
 function Gallery() {
   return (

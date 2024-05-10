@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export const Contact = () => {
+export const ContactComponent = () => {
   return (
     <div className="container mx-auto">
       <div className="flex flex-col p-4">
@@ -62,4 +62,5 @@ export const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactComponent;
+

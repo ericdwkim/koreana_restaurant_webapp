@@ -1,6 +1,6 @@
 import React from "react";
-import OthersHero from "../components/OthersHero/OthersHero";
-import ContactComponent from "../components/ContactComponent/ContactComponent";
+import {OthersHero} from "@/components/OthersHero";
+import {ContactComponent} from "@/components/ContactComponent";
 
 function Contact() {
   return (
