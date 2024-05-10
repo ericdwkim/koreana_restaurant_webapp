@@ -2,25 +2,28 @@
 
 import React, { useState } from "react";
 import Image from 'next/image';
-import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/Logo-Korean-Resturent.png";
+import Link from "next/link";
+import { useRouter } from "next/router"; // Import useRouter
+import logo from "../public/logo.png";
 
 export const Navbar = () => {
-  const location = useLocation();
+  const router = useRouter(); // Use useRouter instead of useLocation
   const [isActiveMobile, setIsActiveMobile] = useState(false);
 
   return (
     <nav className="bg-white shadow-md py-4 px-5 flex justify-between items-center">
-      <Link to="/">
-        <div className="flex items-center">
-          <Image 
-            src={logo} 
-            alt="Website logo" 
-            className="h-10" 
-            width={100}
-            height={100}
-          />
-        </div>
+      <Link href="/">
+        <a>
+          <div className="flex items-center">
+            <Image 
+              src={logo} 
+              alt="Website logo" 
+              className="h-10" 
+              width={100}
+              height={100}
+            />
+          </div>
+        </a>
       </Link>
       <svg
         onClick={() => setIsActiveMobile(!isActiveMobile)}
@@ -38,20 +41,20 @@ export const Navbar = () => {
         />
       </svg>
       <div className={`md:flex hidden ${isActiveMobile ? "flex" : "hidden"} flex-col md:flex-row items-center`}>
-        <Link to="/" className={`px-3 py-2 rounded ${location.pathname === "/" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          HOME
+        <Link href="/" className={`px-3 py-2 rounded ${router.pathname === "/" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
+          <a>HOME</a>
         </Link>
-        <Link to="/menu" className={`px-3 py-2 rounded ${location.pathname === "/menu" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          MENU
+        <Link href="/menu" className={`px-3 py-2 rounded ${router.pathname === "/menu" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
+          <a>MENU</a>
         </Link>
-        <Link to="/about" className={`px-3 py-2 rounded ${location.pathname === "/about" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          ABOUT
+        <Link href="/about" className={`px-3 py-2 rounded ${router.pathname === "/about" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
+          <a>ABOUT</a>
         </Link>
-        <Link to="/gallery" className={`px-3 py-2 rounded ${location.pathname === "/gallery" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          GALLERY
+        <Link href="/gallery" className={`px-3 py-2 rounded ${router.pathname === "/gallery" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
+          <a>GALLERY</a>
         </Link>
-        <Link to="/contact" className={`px-3 py-2 rounded ${location.pathname === "/contact" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          CONTACT
+        <Link href="/contact" className={`px-3 py-2 rounded ${router.pathname === "/contact" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
+          <a>CONTACT</a>
         </Link>
       </div>
     </nav>

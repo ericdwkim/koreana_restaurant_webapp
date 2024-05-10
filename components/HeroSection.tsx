@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar } from './navbar';
+import Link from 'next/link';
+import { Navbar } from './Navbar';
 
 export const HeroSection = () => {
   return (
@@ -15,7 +15,7 @@ export const HeroSection = () => {
         <p className="text-xl mt-5">
           Most authentic Korean cuisine you'll ever experience
         </p>
-        <Link to="/menu" className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <Link href="/menu" className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           MENU
         </Link>
         <h2 className="text-2xl mt-10">
