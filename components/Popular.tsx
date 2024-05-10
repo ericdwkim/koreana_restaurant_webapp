@@ -13,7 +13,7 @@ import popularImage4 from '../public/most-popular-4.jpg';
 import popularImage5 from '../public/most-popular-5.jpg';
 import Image from 'next/image';
 
-const Popular = () => {
+export const Popular = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="text-center">

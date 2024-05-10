@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const TableBook = () => {
+export const TableBook = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="bg-white shadow-lg rounded-lg p-6 text-center" data-aos="fade-up" data-aos-duration="2000">

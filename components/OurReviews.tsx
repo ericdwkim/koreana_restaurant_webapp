@@ -23,7 +23,7 @@ interface Review {
   text: string;
 }
 
-export const Reviews = () => {
+export const OurReviews = () => {
   const [businessData, setBusinessData] = useState<BusinessData>({
     name: "",
     rating: 5,
@@ -141,4 +141,4 @@ export const Reviews = () => {
     );
   };
   
-  export default Reviews;
+  export default OurReviews;
