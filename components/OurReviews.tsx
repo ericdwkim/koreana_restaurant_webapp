@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
@@ -85,7 +86,7 @@ export const OurReviews = () => {
         ) : (
           <>
             <div className="flex flex-col items-center">
-              <img
+              <Image
                 src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
                 alt="Place main"
                 className="rounded-lg"
@@ -119,7 +120,7 @@ export const OurReviews = () => {
               {businessData.reviews.map((review, index) => (
                 <SwiperSlide key={index} className="p-4 shadow-lg rounded-lg">
                   <div className="flex flex-col items-center">
-                    <img src={review.profile_photo_url} alt="User profile" className="rounded-full h-12 w-12" />
+                    <Image src={review.profile_photo_url} alt="User profile" className="rounded-full h-12 w-12" />
                     <a
                       href={review.author_url}
                         target="_blank"

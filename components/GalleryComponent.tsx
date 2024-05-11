@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
+import Image from "next/image";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 interface Image {
@@ -44,7 +45,7 @@ export const GalleryComponent = () => {
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-3 gap-4">
         {imagePaths.map((path, index) => (
-          <img
+          <Image
             key={index}
             src={folderPath + path}
             alt={`${index}`}
@@ -61,7 +62,7 @@ export const GalleryComponent = () => {
               >
                 &times;
               </span>
-              <img
+              <Image
                 src={galleryImages[currentIndex].original}
                 alt={`${currentIndex}`}
                 className="max-w-full max-h-full"
