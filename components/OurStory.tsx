@@ -2,8 +2,8 @@
 
 import React from 'react';
 import Image from 'next/image';
-import storyImage1 from "../../assets/our-story-1.jpeg";
-import storyImage2 from "../../assets/our-story-2.jpeg";
+import storyImage1 from "../public/our-story-1.jpeg";
+import storyImage2 from "../public/our-story-2.jpeg";
 
 export const OurStory = () => {
   return (
@@ -24,7 +24,7 @@ export const OurStory = () => {
             A Korean restaurant located in the northeast of San Antonio.
             Recently under new management, the restaurant is now owned and
             operated by Mira Kim. The restaurant prides itself on providing
-            customers with an authentic taste of Korean cuisine. Whether you're
+            customers with an authentic taste of Korean cuisine. Whether you&apos;re
             a seasoned Korean food enthusiast or trying it for the first time,
             the team at Koreana is dedicated to ensuring that you have a
             memorable and enjoyable dining experience. Come and enjoy a taste of
