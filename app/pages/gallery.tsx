@@ -2,7 +2,7 @@ import React from "react";
 import {OthersHero} from "@/components/OthersHero";
 import {GalleryComponent} from "@/components/GalleryComponent";
 
-function Gallery() {
+export default function Gallery() {
   return (
     <div>
       <OthersHero
@@ -14,6 +14,4 @@ function Gallery() {
       <GalleryComponent />
     </div>
   );
-}
-
-export default Gallery;
+};

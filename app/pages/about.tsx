@@ -2,7 +2,8 @@ import React from "react";
 import {OthersHero} from "@/components/OthersHero";
 import {AboutContent} from "@/components/AboutContent";
 import {TableBook} from "@/components/TableBook";
-function About() {
+
+export default function About() {
   return (
     <div>
       <OthersHero
@@ -15,6 +16,4 @@ function About() {
       <TableBook />
     </div>
   );
-}
-
-export default About;
+};

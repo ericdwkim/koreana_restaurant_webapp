@@ -1,7 +1,9 @@
 import React from "react";
 import {OthersHero} from "@/components/OthersHero";
 import {MenuItem} from "@/components/MenuItem";
-function Menu() {
+
+
+export default function Menu() {
   return (
     <div className="menu">
       <OthersHero
@@ -13,6 +15,4 @@ Lunch specials are only available from Monday to Friday 11am - 2:30pm excluding 
       <MenuItem/>
     </div>
   );
-}
-
-export default Menu;
+};

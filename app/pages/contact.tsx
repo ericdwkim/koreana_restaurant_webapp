@@ -2,7 +2,7 @@ import React from "react";
 import {OthersHero} from "@/components/OthersHero";
 import {ContactComponent} from "@/components/ContactComponent";
 
-function Contact() {
+export default function Contact() {
   return (
     <div>
       <OthersHero
@@ -12,6 +12,4 @@ function Contact() {
       <ContactComponent />
     </div>
   );
-}
-
-export default Contact;
+};
