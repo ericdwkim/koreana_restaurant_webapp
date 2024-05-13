@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from "next/link";
 import { useRouter } from "next/router"; // Import useRouter
 import logo from "../public/logo.png";
+import { navbarLinks } from "@/lib/links";
 
 export const Navbar = () => {
   const router = useRouter(); // Use useRouter instead of useLocation
@@ -41,21 +42,13 @@ export const Navbar = () => {
         />
       </svg>
       <div className={`md:flex hidden ${isActiveMobile ? "flex" : "hidden"} flex-col md:flex-row items-center`}>
-        <Link href="/" className={`px-3 py-2 rounded ${router.pathname === "/" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          <a>HOME</a>
-        </Link>
-        <Link href="/menu" className={`px-3 py-2 rounded ${router.pathname === "/menu" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          <a>MENU</a>
-        </Link>
-        <Link href="/about" className={`px-3 py-2 rounded ${router.pathname === "/about" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          <a>ABOUT</a>
-        </Link>
-        <Link href="/gallery" className={`px-3 py-2 rounded ${router.pathname === "/gallery" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          <a>GALLERY</a>
-        </Link>
-        <Link href="/contact" className={`px-3 py-2 rounded ${router.pathname === "/contact" ? "bg-blue-500 text-white" : "text-gray-700"}`}>
-          <a>CONTACT</a>
-        </Link>
+        {navbarLinks.map(link => (
+          <Link key={link.href} href={link.href}>
+            <a className={`px-3 py-2 rounded ${router.pathname === link.href ? "bg-blue-500 text-white" : "text-gray-700"}`}>
+              {link.label}
+            </a>
+          </Link>
+        ))}
       </div>
     </nav>
   );
