@@ -24,7 +24,7 @@ export const OurStory = () => {
             A Korean restaurant located in the northeast of San Antonio.
             Recently under new management, the restaurant is now owned and
             operated by Mira Kim. The restaurant prides itself on providing
-            customers with an authentic taste of Korean cuisine. Whether you&apos;re
+            customers with an authentic taste of Korean cuisine. Whether you{'\''}re
             a seasoned Korean food enthusiast or trying it for the first time,
             the team at Koreana is dedicated to ensuring that you have a
             memorable and enjoyable dining experience. Come and enjoy a taste of

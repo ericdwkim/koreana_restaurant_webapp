@@ -13,7 +13,7 @@ export const HeroSection = () => {
           Welcome to Koreana Restaurant where Seoul meets Food
         </h1>
         <p className="text-xl mt-5">
-          Most authentic Korean cuisine you'll ever experience
+          Most authentic Korean cuisine you{'\''}ll ever experience
         </p>
         <Link href="/menu" className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           MENU
@@ -21,7 +21,7 @@ export const HeroSection = () => {
         <h2 className="text-2xl mt-10">
           Want to join the Koreana team or know someone who might? <br/>
           Call 210-804-0019 or inquire within <br/>
-          We’re hiring!!!
+          We{'\''}re hiring!!!
         </h2>
       </div>
     </div>
