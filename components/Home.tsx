@@ -4,7 +4,7 @@ import { Popular } from '@/components/Popular';
 import { OurReviews } from '@/components/OurReviews';
 import { TableBook } from '@/components/TableBook';
 
-export default function Home() {
+export function Home() {
   return (
     <main className='bg-white'>
       <HeroSection />
@@ -15,3 +15,5 @@ export default function Home() {
     </main>
   );
 };
+
+export default Home;
