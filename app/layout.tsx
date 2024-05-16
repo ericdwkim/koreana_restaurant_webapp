@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Home } from '@/components/Home';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Inter } from "next/font/google";
@@ -12,19 +13,15 @@ export const metadata: Metadata = {
   description: 'Web site created with Next.js.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
-        <Navbar/>
+        <Navbar />
+        <Home/>
         <div id="root">{children}</div>
         <Footer/>
       </body>
     </html>
-
   );
 };
