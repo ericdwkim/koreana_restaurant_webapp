@@ -88,8 +88,9 @@ export const OurReviews = () => {
             <div className="flex flex-col items-center">
               <Image
                 src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
+                width={50}
+                height={50}
                 alt="Place main"
-                className="rounded-lg"
               />
               <a
                 href="https://www.google.com/maps?cid=3259221795650919126"
@@ -120,7 +121,12 @@ export const OurReviews = () => {
               {businessData.reviews.map((review, index) => (
                 <SwiperSlide key={index} className="p-4 shadow-lg rounded-lg">
                   <div className="flex flex-col items-center">
-                    <Image src={review.profile_photo_url} alt="User profile" className="rounded-full h-12 w-12" />
+                    <Image 
+                      src={review.profile_photo_url} 
+                      alt="User profile" 
+                      width={500}
+                      height={500}
+                      className="rounded-full h-12 w-12" />
                     <a
                       href={review.author_url}
                         target="_blank"
