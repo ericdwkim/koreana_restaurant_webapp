@@ -6,8 +6,7 @@ import { Navbar } from './Navbar';
 
 export const HeroSection = () => {
   return (
-    <div className="bg-cover bg-center text-white py-20 px-10 object-fill" style={{ backgroundImage: `url('/path/to/your/background-image.jpg')` }}>
-      <Navbar />
+    <div className="bg-cover bg-center text-white py-20 px-10 object-fill" style={{ backgroundImage: `url('/menu-hero.jpg')` }}>
       <div className="mt-10 text-center">
         <h1 className="text-5xl font-bold">
           Welcome to Koreana Restaurant where Seoul meets Food
