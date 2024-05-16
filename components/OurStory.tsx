@@ -10,8 +10,8 @@ export const OurStory = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-wrap justify-center items-center">
         <div className="w-full md:w-1/2 p-4" data-aos="fade-right" data-aos-duration="2000" data-aos-anchor-placement="top-bottom">
-          <Image src={storyImage1} alt="Story" className="rounded-lg shadow-lg" width={500} height={300} />
-          <Image src={storyImage2} alt="Story" className="mt-4 rounded-lg shadow-lg" width={500} height={300} />
+          <Image src={storyImage1} alt="Story" className="rounded-lg shadow-lg" style={{ width: 'auto', height: 'auto' }} />
+          <Image src={storyImage2} alt="Story" className="mt-4 rounded-lg shadow-lg" style={{ width: 'auto', height: 'auto' }} />
         </div>
         <div className="w-full md:w-1/2 p-4" data-aos="fade-left" data-aos-duration="2000">
           <h3 className="text-3xl font-bold">

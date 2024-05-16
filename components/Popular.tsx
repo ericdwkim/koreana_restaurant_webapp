@@ -44,19 +44,19 @@ export const Popular = () => {
           className="swiper-container"
         >
           <SwiperSlide className="swiper-slide">
-            <Image src={popularImage1} alt="Popular Item 1" width={500} height={300} />
+            <Image src={popularImage1} alt="Popular Item 1" style={{ width: 'auto', height: 'auto' }} />
           </SwiperSlide>
           <SwiperSlide className="swiper-slide">
-            <Image src={popularImage2} alt="Popular Item 2" width={500} height={300} />
+            <Image src={popularImage2} alt="Popular Item 2" style={{ width: 'auto', height: 'auto' }} />
           </SwiperSlide>
           <SwiperSlide className="swiper-slide">
-            <Image src={popularImage3} alt="Popular Item 3" width={500} height={300} />
+            <Image src={popularImage3} alt="Popular Item 3" style={{ width: 'auto', height: 'auto' }} />
           </SwiperSlide>
           <SwiperSlide className="swiper-slide">
-            <Image src={popularImage4} alt="Popular Item 4" width={500} height={300} />
+            <Image src={popularImage4} alt="Popular Item 4" style={{ width: 'auto', height: 'auto' }} />
           </SwiperSlide>
           <SwiperSlide className="swiper-slide">
-            <Image src={popularImage5} alt="Popular Item 5" width={500} height={300} />
+            <Image src={popularImage5} alt="Popular Item 5" style={{ width: 'auto', height: 'auto' }} />
           </SwiperSlide>
         </Swiper>
       </div>

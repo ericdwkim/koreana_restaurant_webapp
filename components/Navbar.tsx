@@ -18,8 +18,7 @@ export const Navbar = () => {
           src={logo} 
           alt="Website logo" 
           className="h-10" 
-          width={100}
-          height={100}
+          style={{ width: 'auto', height: 'auto' }}
         />
       </Link>
       <svg
