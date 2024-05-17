@@ -1,15 +1,15 @@
-interface MenuItem {
+export interface MenuItem {
   name: string;
   price: string;
   shortdes?: string;
 }
 
-interface MenuCategory {
+export interface MenuCategory {
   type: string;
   items: MenuItem[];
 }
 
-interface Menu {
+export interface Menu {
   categories: MenuCategory[];
 }
 
