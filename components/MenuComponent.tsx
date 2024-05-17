@@ -8,13 +8,7 @@ interface Category {
   items: MenuItem[];
 }
 
-interface MenuItem {
-  name: string;
-  shortdes?: string;
-  price: string;
-}
-
-export const MenuItem = () => {
+export const MenuComponent = () => {
   const [activeType, setActiveType] = useState<string>("Meat Entrées");
 
   const handleTypeClick = (type: string) => {
@@ -61,5 +55,5 @@ export const MenuItem = () => {
   );
 };
 
-export default MenuItem;
+export default MenuComponent;
 
