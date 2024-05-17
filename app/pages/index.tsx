@@ -1,6 +1,7 @@
 // pages/index.tsx
 import { NextPage } from 'next';
 import Link from 'next/link';
+import { HomeContent } from '@/components/HomeContent';
 
 const Home: NextPage = () => {
   return (
@@ -10,6 +11,7 @@ const Home: NextPage = () => {
           <li><Link href="/">Home</Link></li>
         </ul>
       </nav>
+      <HomeContent/>
     </div>
   );
 }
