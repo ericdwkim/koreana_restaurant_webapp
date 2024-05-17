@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Home } from '@/components/Home';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
-import { Inter } from "next/font/google";
-import "./globals.css";
+// import { Inter } from "next/font/google";
+import "./styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 
 export const metadata: Metadata = {
@@ -18,7 +17,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
-        <Home/>
         {/* <div id="root">{children}</div> */}
         <Footer/>
       </body>
