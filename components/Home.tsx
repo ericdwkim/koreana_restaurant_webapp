@@ -6,13 +6,15 @@ import { TableBook } from '@/components/TableBook';
 
 export function Home() {
   return (
-    <main className='bg-white'>
+    <div>
       <HeroSection />
       <OurStory />
       <Popular />
       <OurReviews />
       <TableBook />
-    </main>
+
+    </div>
+
   );
 };
 

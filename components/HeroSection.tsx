@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Navbar } from './Navbar';
 
 export const HeroSection = () => {
   return (
