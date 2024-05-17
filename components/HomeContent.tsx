@@ -4,7 +4,7 @@ import { Popular } from '@/components/Popular';
 import { OurReviews } from '@/components/OurReviews';
 import { TableBook } from '@/components/TableBook';
 
-export function Home() {
+export function HomeContent() {
   return (
     <div>
       <HeroSection />
@@ -18,4 +18,4 @@ export function Home() {
   );
 };
 
-export default Home;
+export default HomeContent;
