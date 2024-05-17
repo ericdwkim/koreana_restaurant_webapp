@@ -1,6 +1,6 @@
 import React from "react";
 import {OthersHero} from "@/components/OthersHero";
-import {MenuItem} from "@/components/MenuItem";
+import {MenuComponent} from "@/components/MenuComponent";
 
 
 export default function Menu() {
@@ -12,7 +12,7 @@ export default function Menu() {
 For the latest and most accurate prices please call us at (210)-804-0019 during business hours
 Lunch specials are only available from Monday to Friday 11am - 2:30pm excluding holidays.`}
       />
-      <MenuItem/>
+      <MenuComponent/>
     </div>
   );
 };
