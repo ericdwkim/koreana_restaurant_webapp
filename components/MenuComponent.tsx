@@ -1,12 +1,8 @@
 'use client';
 
 import React, { useState } from "react";
-import menuData from "../data/menu.json"; // Make sure to import your JSON data
+import { menuData, MenuItem, MenuCategory} from "@/lib/menuData";
 
-interface Category {
-  type: string;
-  items: MenuItem[];
-}
 
 export const MenuComponent = () => {
   const [activeType, setActiveType] = useState<string>("Meat Entrées");
@@ -28,7 +24,7 @@ export const MenuComponent = () => {
   };
 
   const renderCategories = () => {
-    return menuData.categories.map((category: Category, index: number) => (
+    return menuData.categories.map((category: MenuCategory, index: number) => (
       <div key={index} className={`p-2 ${category.type === activeType ? "bg-blue-500 text-white" : "bg-white text-gray-900"} cursor-pointer`}
            onClick={() => handleTypeClick(category.type)}>
         <h2 className="text-lg font-bold">{category.type}</h2>
@@ -47,7 +43,7 @@ export const MenuComponent = () => {
       </div>
       <div className="mt-4">
         {menuData.categories.map(
-          (category: Category) =>
+          (category: MenuCategory) =>
             category.type === activeType && renderMenuItems(category.items)
         )}
       </div>
