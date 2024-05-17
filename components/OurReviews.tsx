@@ -33,24 +33,26 @@ export const OurReviews = () => {
   });
   const [resultOnPage, setResultOnPage] = useState(3);
   const [loading, setLoading] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0); // Initialize to 0 or a default width
 
   useEffect(() => {
-    const resizeListener = () => {
+    // Ensure window object is available
+    if (typeof window !== 'undefined') {
       setWindowWidth(window.innerWidth);
-      if (windowWidth < 800) {
-        setResultOnPage(1);
-      } else if (windowWidth < 1250) {
-        setResultOnPage(2);
-      } else {
-        setResultOnPage(3);
-      }
-    };
-    window.addEventListener("resize", resizeListener);
-    return () => {
-      window.removeEventListener("resize", resizeListener);
-    };
-  }, [windowWidth]);
+
+      const resizeListener = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      // Set up event listener for window resize
+      window.addEventListener('resize', resizeListener);
+
+      // Clean up
+      return () => {
+        window.removeEventListener('resize', resizeListener);
+      };
+    }
+  }, []);
 
   useEffect(() => {
     axios.get("https://koreana.restaurant/reviews/")
