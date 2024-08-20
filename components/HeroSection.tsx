@@ -21,7 +21,7 @@ export const HeroSection = () => {
           <p className="text-xl mt-5">
               Most authentic Korean cuisine you{'\''}ll ever experience
           </p>
-          <Link href="/menu" className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Link href={"/menu"} className="mt-10 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             MENU
           </Link>
         </div>
