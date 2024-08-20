@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Navbar } from './Navbar';
 
 interface OthersHeroProps {
   heroTitle: string;
@@ -11,7 +10,6 @@ interface OthersHeroProps {
 export const OthersHero = ({ heroTitle, heroDescription }: OthersHeroProps) => {
   return (
     <div className="bg-gray-200 text-center py-20">
-      <Navbar />
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-800">{heroTitle}</h1>
         <p className="text-lg mt-4 text-gray-600">{heroDescription}</p>
