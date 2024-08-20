@@ -35,5 +35,13 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # koreana_restaurant_webapp
-# koreana_restaurant_webapp
-# koreana_restaurant_webapp
+
+- left off - replicating css
+- menu indexing in order
+- quick links to socials 
+- contact us form
+- padding in gallery photos
+- animations
+- footer to be organized ; color: #052042
+- underline animation on hover for navi links
+- css of highlighting navi link
