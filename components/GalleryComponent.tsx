@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import ImageGallery from "react-image-gallery";
 import Image from "next/image";
-import "react-image-gallery/styles/css/image-gallery.css";
 
 interface Image {
   original: string;
@@ -11,7 +10,7 @@ interface Image {
 }
 
 export const GalleryComponent = () => {
-  const folderPath = "../gallery/"; // Replace with your folder path
+  const folderPath = "/"; // Replace with your folder path
 
   const imagePaths = [
     "o.jpg", "o-1.jpg", "o-2.jpg", "o-3.jpg", "o-4.jpg", "o-5.jpg",
@@ -20,7 +19,6 @@ export const GalleryComponent = () => {
     "o-18.jpg", "o-19.jpg", "o-20.jpg", "o-21.jpg", "o-22.jpg", "o-23.jpg",
     "o-24.jpg", "o-25.jpg", "o-26.jpg", "o-27.jpg", "o-28.jpg", "o-29.jpg",
     "o-30.jpg", "o-31.jpg", "o-32.jpg", "o-33.jpg", "o-34.jpg",
-    // Add more image paths
   ];
 
   const galleryImages: Image[] = imagePaths.map((path) => ({
@@ -48,6 +46,8 @@ export const GalleryComponent = () => {
           <Image
             key={index}
             src={folderPath + path}
+            width={500}
+            height={500}
             alt={`${index}`}
             className="cursor-pointer"
             onClick={() => handleImageClick(index)}
@@ -64,8 +64,10 @@ export const GalleryComponent = () => {
               </span>
               <Image
                 src={galleryImages[currentIndex].original}
+                width={1000}
+                height={1000}
                 alt={`${currentIndex}`}
-                className="max-w-full max-h-full"
+                className="object-cover object-center"
               />
             </div>
             <ImageGallery
