@@ -18,7 +18,7 @@ export const Popular = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-800" data-aos="fade-up" data-aos-duration="1500">
-          Popular <span className="text-blue-500">Items</span>
+          Popular <span className="text-red-1000">Items</span>
         </h1>
         <p className="text-lg mt-4 text-gray-600" data-aos="fade-up" data-aos-duration="2000">
           These are some of the most popular items that you will find on our menu.

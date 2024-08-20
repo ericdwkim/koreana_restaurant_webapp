@@ -15,7 +15,7 @@ export const OurStory = () => {
         </div>
         <div className="w-full md:w-1/2 p-4" data-aos="fade-left" data-aos-duration="2000">
           <h3 className="text-3xl font-bold">
-            OUR <span className="text-blue-500">STORY</span>
+            OUR <span className="text-red-1000">STORY</span>
           </h3>
           <h1 className="text-5xl font-bold mt-2">
             Family-Owned Korean Restaurant Serving San Antonio For Over 25 Years.

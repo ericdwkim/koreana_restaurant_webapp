@@ -75,7 +75,7 @@ export const OurReviews = () => {
     <div className="container mx-auto px-4">
       <div className="text-center py-8">
         <h1 className="text-3xl font-bold">
-          Customer <span className="text-blue-500">Reviews</span>
+          Customer <span className="text-red-1000">Reviews</span>
         </h1>
         <p className="text-lg mt-2">What Our Customer Say About Us</p>
       </div>
