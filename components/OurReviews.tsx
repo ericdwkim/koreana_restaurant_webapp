@@ -90,8 +90,8 @@ export const OurReviews = () => {
             <div className="flex flex-col items-center">
               <Image
                 src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
-                width={500}
-                height={500}
+                width={150}
+                height={150}
                 alt="Place main"
               />
               <a
