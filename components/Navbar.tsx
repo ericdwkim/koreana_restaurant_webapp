@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Image from 'next/image';
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import useRouter
-import logo from "../public/logo.png";
+import logo from "../public/restaurant_koreana_logo.svg";
 import { navbarLinks } from "@/lib/links";
 
 export const Navbar = () => {
