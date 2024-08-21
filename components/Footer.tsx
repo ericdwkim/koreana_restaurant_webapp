@@ -18,6 +18,9 @@ export const Footer = () => {
                     {section.content.map((item, idx) => (
                         <p key={idx}>{item}</p>
                     ))}
+                    {section.note && (
+                        <p className="italic mt-2">{section.note}</p>
+                    )}
                   </div>
                 </div>
             ))}

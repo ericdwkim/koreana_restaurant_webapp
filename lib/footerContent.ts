@@ -12,10 +12,12 @@ export const footerContent = [
     },
     {
         title: "Open Positions",
-        content: ["- Servers", "- Cooks", "- Dishwashers", "Want to join the team or know someone who might? Call or inquire within."],
+        content: ["- Servers", "- Cooks", "- Dishwashers"],
+        note: "Want to join the team or know someone who might? Call or inquire within!",
     },
     {
         title: "Business Hours",
-        content: ["Mon - Thurs 11am - 9pm", "Fri & Sat 11am - 10pm", "Sunday 12pm – 7pm", "*Closed on Wednesdays starting 9/04/24"],
+        content: ["Mon - Thurs 11am - 9pm", "Fri & Sat 11am - 10pm", "Sunday 12pm – 7pm"],
+        note: "*Closed on Wednesdays starting 9/04/24",
     },
 ];
