@@ -9,7 +9,10 @@ import "./styles/globals.css";
 
 export const metadata: Metadata = {
   title: 'Koreana Restaurant',
-  description: 'Web site created with Next.js.',
+  description: 'A taste of Seoul in San Antonio!',
+  icons: {
+      icon: 'favicon.ico',
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
