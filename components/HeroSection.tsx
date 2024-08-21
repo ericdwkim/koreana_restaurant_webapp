@@ -5,7 +5,7 @@ import { MenuButton } from '@/components/MenuButtonComponent';
 
 export const HeroSection = () => {
   return (
-      <div className="relative text-white py-32 px-10">
+      <div className="relative text-white py-48 px-10">
         {/* Background Image */}
         <div
             className="absolute inset-0 bg-cover bg-center z-0"
@@ -16,7 +16,7 @@ export const HeroSection = () => {
         {/* Content */}
         <div className="relative z-20 container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold">
-            Welcome to Koreana Restaurant where Seoul meets Food
+            Welcome to Koreana Restaurant where <br/> Seoul meets Food
           </h1>
           <p className="text-xl mt-5">
               Most authentic Korean cuisine you{'\''}ll ever experience
