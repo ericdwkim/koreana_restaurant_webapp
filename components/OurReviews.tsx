@@ -75,7 +75,7 @@ export const OurReviews = () => {
     <div className="container mx-auto px-4">
       <div className="text-center py-8">
         <h1 className="text-3xl font-bold">
-          Customer <span className="text-blue-500">Reviews</span>
+          Customer <span className="text-red-1000">Reviews</span>
         </h1>
         <p className="text-lg mt-2">What Our Customer Say About Us</p>
       </div>
@@ -90,8 +90,8 @@ export const OurReviews = () => {
             <div className="flex flex-col items-center">
               <Image
                 src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
-                width={500}
-                height={500}
+                width={150}
+                height={150}
                 alt="Place main"
               />
               <a
