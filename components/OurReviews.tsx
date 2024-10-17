@@ -31,7 +31,7 @@ export const OurReviews = () => {
     reviews: [],
     user_ratings_total: "",
   });
-  const [resultOnPage, setResultOnPage] = useState(3);
+  const [resultOnPage] = useState(3);
   const [loading, setLoading] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0); // Initialize to 0 or a default width
 
