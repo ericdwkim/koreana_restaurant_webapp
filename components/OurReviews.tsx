@@ -130,9 +130,11 @@ export const OurReviews = () => {
                  style={{height: 'calc(100% - 40px)'}}>
               <Image
                   src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
-                  width={150}
-                  height={150}
                   alt="Place main"
+                  width={200}
+                  height={200}
+                  className="rounded-full object-cover"
+
               />
               <a
                   href="https://www.google.com/maps?cid=3259221795650919126"
