@@ -142,22 +142,22 @@ export const OurReviews = () => {
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:text-blue-700"
               >
-                <h1 className="text-2xl font-bold">{businessData.name}</h1>
+                <h1 className="text-2xl text-red-1001 font-bold">{businessData.name}</h1>
               </a>
               <div className="flex items-center mt-2">
-                <h3 className="text-xl">{businessData.rating}</h3>
+                <h3 className="text-xl text-orange-400 font-bold">{businessData.rating}</h3>
               </div>
-              <div className="flex flex-row">{renderRatingIcons(businessData.rating)}</div>
-              <h5 className="text-sm uppercase tracking-wide">FROM GOOGLE</h5>
+              <div className="flex flex-row space-x-0">{renderRatingIcons(businessData.rating)}</div>
+              <h5 className="text-sm uppercase font-bold">FROM GOOGLE</h5>
               <p>
-                Based on <span className="font-bold">{businessData.user_ratings_total}</span> reviews
+                Based on <span className="font-bold text-red-1001">{businessData.user_ratings_total}</span> reviews
               </p>
             </div>
             <Swiper
                 slidesPerView={resultOnPage}
                 spaceBetween={20}
-              pagination={{
-                clickable: true,
+                pagination={{
+                  clickable: true,
               }}
               modules={[Pagination]}
               className="my-4"
