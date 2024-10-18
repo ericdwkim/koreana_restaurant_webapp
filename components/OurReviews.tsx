@@ -126,7 +126,8 @@ export const OurReviews = () => {
           </div>
         ) : (
           <>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center shadow-lg p-5 rounded-[20px] text-center my-2.5 mb-[47px]"
+                 style={{height: 'calc(100% - 40px)'}}>
               <Image
                   src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
                   width={150}
