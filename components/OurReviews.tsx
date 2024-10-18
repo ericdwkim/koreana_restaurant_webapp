@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { CustomStarIcon } from '@/components/CustomStarIcon';
 import { CustomPointIcon } from '@/components/CustomPointIcon';
+import { WriteReviewButton } from '@/components/WriteReviewButtonComponent';
 
 interface BusinessData {
   name: string;
@@ -152,6 +153,7 @@ export const OurReviews = () => {
               <p>
                 Based on <span className="font-bold text-red-1001">{businessData.user_ratings_total}</span> reviews
               </p>
+              <WriteReviewButton/>
             </div>
             <Swiper
                 slidesPerView={resultOnPage}
