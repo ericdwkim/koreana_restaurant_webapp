@@ -45,3 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - footer to be organized ; color: #052042
 - underline animation on hover for navi links
 - css of highlighting navi link
+
+### TODOS:
+- refactor google review star rendering logic; use [@SVGR](https://react-svgr.com/docs/next/#typescript) (already installed) 
