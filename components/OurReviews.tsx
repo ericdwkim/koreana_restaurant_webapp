@@ -7,6 +7,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { CustomStarIcon } from '@/components/CustomStarIcon';
+import { CustomPointIcon } from '@/components/CustomPointIcon';
+import { WriteReviewButton } from '@/components/WriteReviewButtonComponent';
 
 interface BusinessData {
   name: string;
@@ -31,7 +34,7 @@ export const OurReviews = () => {
     reviews: [],
     user_ratings_total: "",
   });
-  const [resultOnPage, setResultOnPage] = useState(3);
+  const [resultOnPage] = useState(3);
   const [loading, setLoading] = useState(true);
   const [windowWidth, setWindowWidth] = useState(0); // Initialize to 0 or a default width
 
@@ -71,6 +74,43 @@ export const OurReviews = () => {
       });
   }, []);
 
+  const renderRatingIcons = (rating) => {
+    const ratingIcons = [];
+
+    if (Number.isInteger(rating)) {
+      // Render star icons for whole number ratings
+      for (let i = 1; i < 5; i++) {
+        // @ts-ignore
+        ratingIcons.push(<CustomStarIcon key={i} filled={i <= rating}/>);
+      }
+    } else {
+
+      // Calculate the number of filled and empty icons for point ratings
+      // todo: revisit this nonsense; just an edge case handling logic
+      const filledIcons = Math.floor(rating);
+      const decimalPart = rating - filledIcons;
+      const emptyIcons = 5 - filledIcons - (decimalPart > 0 ?  1: 0);
+
+      for (let i = 0; i < filledIcons; i++) {
+        // @ts-ignore
+        ratingIcons.push(<CustomStarIcon key={`filled-${i}`} filled={true} />);
+      }
+
+      if (decimalPart > 0) {
+        // @ts-ignore
+        ratingIcons.push(<CustomPointIcon key="point-icon" />);
+      }
+
+      for (let i = 0; i < emptyIcons; i++) {
+        // @ts-ignore
+        ratingIcons.push(<CustomStarIcon key={`empty-${i}`} filled={false} />);
+      }
+    }
+
+    return ratingIcons;
+  };
+
+
   return (
     <div className="container mx-auto px-4">
       <div className="text-center py-8">
@@ -87,35 +127,39 @@ export const OurReviews = () => {
           </div>
         ) : (
           <>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center shadow-lg p-5 rounded-[20px] text-center my-2.5 mb-[47px]"
+                 style={{height: 'calc(100% - 40px)'}}>
               <Image
-                src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
-                width={150}
-                height={150}
-                alt="Place main"
+                  src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
+                  alt="Place main"
+                  width={200}
+                  height={200}
+                  className="rounded-full object-cover"
+
               />
               <a
-                href="https://www.google.com/maps?cid=3259221795650919126"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:text-blue-700"
+                  href="https://www.google.com/maps?cid=3259221795650919126"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:text-blue-700"
               >
-                <h1 className="text-2xl font-bold">{businessData.name}</h1>
+                <h1 className="text-2xl text-red-1001 font-bold">{businessData.name}</h1>
               </a>
               <div className="flex items-center mt-2">
-                <h3 className="text-xl">{businessData.rating}</h3>
-                {/* Render rating icons here */}
+                <h3 className="text-xl text-orange-400 font-bold">{businessData.rating}</h3>
               </div>
-              <h5 className="text-sm uppercase tracking-wide">FROM GOOGLE</h5>
+              <div className="flex flex-row space-x-0">{renderRatingIcons(businessData.rating)}</div>
+              <h5 className="text-sm uppercase font-bold">FROM GOOGLE</h5>
               <p>
-                Based on <span className="font-bold">{businessData.user_ratings_total}</span> reviews
+                Based on <span className="font-bold text-red-1001">{businessData.user_ratings_total}</span> reviews
               </p>
+              <WriteReviewButton/>
             </div>
             <Swiper
-              slidesPerView={resultOnPage}
-              spaceBetween={20}
-              pagination={{
-                clickable: true,
+                slidesPerView={resultOnPage}
+                spaceBetween={20}
+                pagination={{
+                  clickable: true,
               }}
               modules={[Pagination]}
               className="my-4"
