@@ -34,28 +34,7 @@ export const OurReviews = () => {
     reviews: [],
     user_ratings_total: "",
   });
-  const [resultOnPage] = useState(3);
   const [loading, setLoading] = useState(true);
-  const [windowWidth, setWindowWidth] = useState(0); // Initialize to 0 or a default width
-
-  useEffect(() => {
-    // Ensure window object is available
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth);
-
-      const resizeListener = () => {
-        setWindowWidth(window.innerWidth);
-      };
-
-      // Set up event listener for window resize
-      window.addEventListener('resize', resizeListener);
-
-      // Clean up
-      return () => {
-        window.removeEventListener('resize', resizeListener);
-      };
-    }
-  }, []);
 
   useEffect(() => {
     axios.get("https://koreana.restaurant/reviews/")
@@ -74,36 +53,18 @@ export const OurReviews = () => {
       });
   }, []);
 
-  const renderRatingIcons = (rating) => {
+  const renderRatingIcons = (rating: number) => {
     const ratingIcons = [];
+    const totalStars = 5;
+    const numericRating = Number(rating);
 
-    if (Number.isInteger(rating)) {
-      // Render star icons for whole number ratings
-      for (let i = 1; i < 5; i++) {
-        // @ts-ignore
-        ratingIcons.push(<CustomStarIcon key={i} filled={i <= rating}/>);
-      }
-    } else {
-
-      // Calculate the number of filled and empty icons for point ratings
-      // todo: revisit this nonsense; just an edge case handling logic
-      const filledIcons = Math.floor(rating);
-      const decimalPart = rating - filledIcons;
-      const emptyIcons = 5 - filledIcons - (decimalPart > 0 ?  1: 0);
-
-      for (let i = 0; i < filledIcons; i++) {
-        // @ts-ignore
-        ratingIcons.push(<CustomStarIcon key={`filled-${i}`} filled={true} />);
-      }
-
-      if (decimalPart > 0) {
-        // @ts-ignore
-        ratingIcons.push(<CustomPointIcon key="point-icon" />);
-      }
-
-      for (let i = 0; i < emptyIcons; i++) {
-        // @ts-ignore
-        ratingIcons.push(<CustomStarIcon key={`empty-${i}`} filled={false} />);
+    for (let i = 1; i <= totalStars; i++) {
+      if (i <= Math.floor(numericRating)) {
+        ratingIcons.push(<CustomStarIcon key={i} filled={true} />);
+      } else if (i === Math.ceil(numericRating) && numericRating % 1 !== 0) {
+        ratingIcons.push(<CustomPointIcon key={i} />);
+      } else {
+        ratingIcons.push(<CustomStarIcon key={i} filled={false} />);
       }
     }
 
@@ -121,74 +82,87 @@ export const OurReviews = () => {
       </div>
       <div>
         {loading ? (
-          <div className="flex justify-center items-center">
-            <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-64 w-64"></div>
-            <h4 className="text-lg">Reviews are loading...</h4>
+          <div className="flex flex-col justify-center items-center py-20">
+            <div className="animate-spin rounded-full border-8 border-gray-200 border-t-red-1001 h-20 w-20 mb-4"></div>
+            <h4 className="text-lg font-medium text-gray-600">Reviews are loading...</h4>
           </div>
         ) : (
           <>
-            <div className="flex flex-col items-center shadow-lg p-5 rounded-[20px] text-center my-2.5 mb-[47px]"
-                 style={{height: 'calc(100% - 40px)'}}>
-              <Image
-                  src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
-                  alt="Place main"
-                  width={200}
-                  height={200}
-                  className="rounded-full object-cover"
-
-              />
+            <div className="flex flex-col items-center shadow-lg p-8 rounded-[30px] text-center my-5 mb-12 bg-white"
+                 style={{ minHeight: '400px' }}>
+              <div className="relative w-48 h-48 mb-6">
+                <Image
+                    src="https://lh3.googleusercontent.com/p/AF1QipMoQqpjXG1OPkH7e1abfZY-0r9gXtGmFaCttGzT=s1360-w1360-h1020"
+                    alt="Koreana Restaurant"
+                    fill
+                    className="rounded-full object-cover border-4 border-gray-50 shadow-md"
+                />
+              </div>
               <a
                   href="https://www.google.com/maps?cid=3259221795650919126"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-700"
+                  className="hover:opacity-80 transition-opacity"
               >
-                <h1 className="text-2xl text-red-1001 font-bold">{businessData.name}</h1>
+                <h2 className="text-3xl text-red-1001 font-bold mb-2">{businessData.name}</h2>
               </a>
-              <div className="flex items-center mt-2">
-                <h3 className="text-xl text-orange-400 font-bold">{businessData.rating}</h3>
+              <div className="flex items-center justify-center mb-1">
+                <span className="text-2xl text-orange-400 font-bold mr-2">{businessData.rating}</span>
+                <div className="flex flex-row">{renderRatingIcons(businessData.rating)}</div>
               </div>
-              <div className="flex flex-row space-x-0">{renderRatingIcons(businessData.rating)}</div>
-              <h5 className="text-sm uppercase font-bold">FROM GOOGLE</h5>
-              <p>
+              <h5 className="text-xs uppercase font-bold text-gray-400 tracking-widest mb-2">FROM GOOGLE</h5>
+              <p className="text-gray-600 mb-6">
                 Based on <span className="font-bold text-red-1001">{businessData.user_ratings_total}</span> reviews
               </p>
               <WriteReviewButton/>
             </div>
             <Swiper
-                slidesPerView={resultOnPage}
-                spaceBetween={20}
+                spaceBetween={30}
                 pagination={{
                   clickable: true,
-              }}
+                }}
+                breakpoints={{
+                  320: {
+                    slidesPerView: 1,
+                  },
+                  768: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                  },
+                }}
               modules={[Pagination]}
-              className="my-4"
+              className="pb-12"
             >
               {businessData.reviews.map((review, index) => (
-                <SwiperSlide key={index} className="p-4 shadow-lg rounded-lg">
-                  <div className="flex flex-col items-center">
-                    <Image 
-                      src={review.profile_photo_url} 
-                      alt="User profile" 
-                      width={500}
-                      height={500}
-                      className="rounded-full h-12 w-12" />
+                <SwiperSlide key={index} className="p-6 shadow-md rounded-2xl bg-white border border-gray-50 h-auto">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative h-16 w-16 mb-4">
+                      <Image 
+                        src={review.profile_photo_url} 
+                        alt={review.author_name} 
+                        fill
+                        className="rounded-full object-cover shadow-sm" />
+                    </div>
                     <a
                       href={review.author_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-blue-500 hover:text-blue-700"
+                        className="text-blue-500 hover:text-blue-700 transition-colors"
                       >
-                        <h4 className="text-lg font-bold">{review.author_name}</h4>
+                        <h4 className="text-lg font-bold line-clamp-1">{review.author_name}</h4>
                       </a>
-                      <p className="text-sm">{review.relative_time_description}</p>
-                      <p className="text-md mt-2">{review.text}</p>
+                      <p className="text-xs text-gray-400 mb-3">{review.relative_time_description}</p>
+                      <p className="text-gray-600 text-sm italic line-clamp-4">
+                        {review.text ? `"${review.text}"` : "No comment left."}
+                      </p>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </>
-          )}
+        )}
         </div>
       </div>
     );
