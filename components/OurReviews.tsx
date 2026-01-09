@@ -54,7 +54,7 @@ export const OurReviews = () => {
   }, []);
 
   const renderRatingIcons = (rating: number) => {
-    const ratingIcons = [];
+    const ratingIcons: React.ReactNode[] = [];
     const totalStars = 5;
     const numericRating = Number(rating);
 
