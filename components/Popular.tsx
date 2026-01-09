@@ -29,11 +29,11 @@ export const Popular = () => {
           effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView="auto"
+          slidesPerView={'auto'}
           coverflowEffect={{
-            rotate: 20,
-            stretch: 10,
-            depth: 50,
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
             modifier: 1,
             slideShadows: true,
           }}
@@ -41,22 +41,22 @@ export const Popular = () => {
             clickable: true,
           }}
           modules={[EffectCoverflow, Pagination]}
-          className="swiper-container"
+          className="swiper-container !py-10"
         >
-          <SwiperSlide className="swiper-slide">
-            <Image src={popularImage1} alt="Popular Item 1" style={{ width: 'auto', height: 'auto' }} />
+          <SwiperSlide className="relative !w-[280px] !h-[280px] sm:!w-[400px] sm:!h-[400px]">
+            <Image src={popularImage1} alt="Popular Item 1" fill className="rounded-2xl object-cover shadow-lg" />
           </SwiperSlide>
-          <SwiperSlide className="swiper-slide">
-            <Image src={popularImage2} alt="Popular Item 2" style={{ width: 'auto', height: 'auto' }} />
+          <SwiperSlide className="relative !w-[280px] !h-[280px] sm:!w-[400px] sm:!h-[400px]">
+            <Image src={popularImage2} alt="Popular Item 2" fill className="rounded-2xl object-cover shadow-lg" />
           </SwiperSlide>
-          <SwiperSlide className="swiper-slide">
-            <Image src={popularImage3} alt="Popular Item 3" style={{ width: 'auto', height: 'auto' }} />
+          <SwiperSlide className="relative !w-[280px] !h-[280px] sm:!w-[400px] sm:!h-[400px]">
+            <Image src={popularImage3} alt="Popular Item 3" fill className="rounded-2xl object-cover shadow-lg" />
           </SwiperSlide>
-          <SwiperSlide className="swiper-slide">
-            <Image src={popularImage4} alt="Popular Item 4" style={{ width: 'auto', height: 'auto' }} />
+          <SwiperSlide className="relative !w-[280px] !h-[280px] sm:!w-[400px] sm:!h-[400px]">
+            <Image src={popularImage4} alt="Popular Item 4" fill className="rounded-2xl object-cover shadow-lg" />
           </SwiperSlide>
-          <SwiperSlide className="swiper-slide">
-            <Image src={popularImage5} alt="Popular Item 5" style={{ width: 'auto', height: 'auto' }} />
+          <SwiperSlide className="relative !w-[280px] !h-[280px] sm:!w-[400px] sm:!h-[400px]">
+            <Image src={popularImage5} alt="Popular Item 5" fill className="rounded-2xl object-cover shadow-lg" />
           </SwiperSlide>
         </Swiper>
       </div>
