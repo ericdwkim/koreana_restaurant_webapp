@@ -11,7 +11,7 @@ export const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
             {footerContent.map((section, index) => (
                 <div key={index}>
-                  <h2 className="font-bold text-xl mb-4">
+                  <h2 className="font-bold text-xl mb-6 pb-2 border-b-2 border-red-1001 w-fit">
                     {section.title.split(' ')[0]} <span className="text-red-1001">{section.title.split(' ')[1]}</span>
                   </h2>
                   <div>
@@ -25,7 +25,7 @@ export const Footer = () => {
                 </div>
             ))}
             <div>
-              <h2 className="font-bold text-xl mb-4">
+              <h2 className="font-bold text-xl mb-6 pb-2 border-b-2 border-red-1001 w-fit">
                 Quick <span className="text-red-1001">Links</span>
               </h2>
               <div className="flex space-x-4">

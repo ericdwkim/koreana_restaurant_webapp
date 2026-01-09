@@ -6,7 +6,7 @@ import aboutContentImage from '../public/about-content.jpg';
 
 export const AboutContent = () => {
     return (
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 py-12">
             <div className="flex flex-col items-center text-center p-4">
                 <Image
                     src={aboutContentImage}

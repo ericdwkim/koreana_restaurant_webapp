@@ -16,7 +16,7 @@ export const ContactComponent = () => {
           <h2 className="text-lg font-bold">PHONE:</h2>
           <p>(210)-804-0019</p>
           <h2 className="text-lg font-bold">EMAIL:</h2>
-          <p>contact@koreana.restaurant</p>
+          <p>koreana.restaurant.sa@gmail.com</p>
           <h2 className="text-lg font-bold">ADDRESS:</h2>
           <p>2458 Harry Wurzbach Rd</p>
           <p>San Antonio, TX 78209</p>
