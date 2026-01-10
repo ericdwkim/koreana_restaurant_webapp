@@ -37,7 +37,7 @@ export const OurReviews = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("https://koreana.restaurant/reviews/")
+    axios.get("/api/reviews")
       .then((response) => {
         const { name, rating, reviews, user_ratings_total } = response.data.result;
         setLoading(false);
