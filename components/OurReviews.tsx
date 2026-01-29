@@ -25,6 +25,7 @@ interface Review {
   rating: number;
   relative_time_description: string;
   text: string;
+  time: number;
 }
 
 export const OurReviews = () => {
@@ -71,6 +72,11 @@ export const OurReviews = () => {
     return ratingIcons;
   };
 
+  const sortedReviews = [...businessData.reviews].sort((a, b) => {
+    const aTime = a.time;
+    const bTime = b.time;
+    return bTime - aTime; // newest first
+  });
 
   return (
     <div className="container mx-auto px-4">
@@ -135,7 +141,7 @@ export const OurReviews = () => {
               modules={[Pagination]}
               className="pb-12"
             >
-              {businessData.reviews.map((review, index) => (
+              {sortedReviews.map((review, index) => (
                 <SwiperSlide key={index} className="p-6 shadow-md rounded-2xl bg-white border border-gray-50 h-auto">
                   <div className="flex flex-col items-center text-center">
                     <div className="relative h-16 w-16 mb-4">
@@ -153,6 +159,13 @@ export const OurReviews = () => {
                       >
                         <h4 className="text-lg font-bold line-clamp-1">{review.author_name}</h4>
                       </a>
+                    <div className="flex items-center justify-center gap-2 mt-1 mb-1"
+                         aria-label={`${review.rating} out of 5 stars`}
+                         >
+                      <span className="text-sm font-semibold text-orange-400">{review.rating}</span>
+                      <div className="flex flex-row">{renderRatingIcons(review.rating)}</div>
+                    </div>
+
                       <p className="text-xs text-gray-400 mb-3">{review.relative_time_description}</p>
                       <p className="text-gray-600 text-sm italic line-clamp-4">
                         {review.text ? `"${review.text}"` : "No comment left."}
