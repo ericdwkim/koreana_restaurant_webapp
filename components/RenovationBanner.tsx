@@ -1,15 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 export const RenovationBanner = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isDismissed, setIsDismissed] = useState(false);
-
-  useEffect(() => {
-    const dismissed = sessionStorage.getItem('renovationBannerDismissed');
-    if (dismissed) setIsDismissed(true);
-  }, []);
 
   const closureStart = new Date('2026-06-08T00:00:00');
   const closureEnd = new Date('2026-06-11T00:00:00');
@@ -19,7 +14,6 @@ export const RenovationBanner = () => {
 
   const handleDismiss = () => {
     setIsVisible(false);
-    sessionStorage.setItem('renovationBannerDismissed', 'true');
     setTimeout(() => setIsDismissed(true), 300);
   };
 
