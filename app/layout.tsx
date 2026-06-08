@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { RenovationBanner } from '@/components/RenovationBanner';
 // import { Inter } from "next/font/google";
 import "./styles/globals.css";
 
@@ -20,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Navbar />
+        <RenovationBanner />
         <div id="root">{children}</div>
         <Footer/>
       </body>
