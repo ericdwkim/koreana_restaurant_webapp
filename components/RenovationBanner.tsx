@@ -1,10 +1,18 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const RenovationBanner = () => {
+  const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isDismissed, setIsDismissed] = useState(false);
+
+  // Only render after mounting on the client so the banner's time-sensitive
+  // visibility is never baked into the prerendered/static HTML (which would
+  // cause a stale flash on load). See git history for the bug this fixes.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const closureStart = new Date('2026-06-08T00:00:00');
   const closureEnd = new Date('2026-06-11T00:00:00');
@@ -17,7 +25,7 @@ export const RenovationBanner = () => {
     setTimeout(() => setIsDismissed(true), 300);
   };
 
-  if (!isActive || isDismissed) return null;
+  if (!mounted || !isActive || isDismissed) return null;
 
   const isCurrentlyClosed = now >= closureStart && now < closureEnd;
 
