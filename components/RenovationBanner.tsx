@@ -14,8 +14,11 @@ export const RenovationBanner = () => {
     setMounted(true);
   }, []);
 
-  const closureStart = new Date('2026-06-08T00:00:00');
-  const closureEnd = new Date('2026-06-11T00:00:00');
+  // Renovation closure is Tuesday, June 30, 2026. We're also closed
+  // Wednesday, July 1 as part of our regular weekly Wednesday closure,
+  // so we reopen Thursday, July 2.
+  const closureStart = new Date('2026-06-30T00:00:00');
+  const closureEnd = new Date('2026-07-02T00:00:00');
   const now = new Date();
 
   const isActive = now < closureEnd;
@@ -34,25 +37,25 @@ export const RenovationBanner = () => {
       flag: '🇺🇸',
       heading: isCurrentlyClosed
         ? 'We are currently closed for renovations'
-        : 'Upcoming closure for renovations',
-      details: 'Monday, June 8 – Wednesday, June 10, 2026',
-      tagline: 'We\u2019ll be back with a fresh new look!',
+        : 'Closing Tuesday for renovations',
+      details: 'Tuesday, June 30 (renovations) + our usual Wednesday closure',
+      tagline: 'See you Thursday, July 2!',
     },
     {
       flag: '🇲🇽',
       heading: isCurrentlyClosed
-        ? 'Cerraremos por renovaciones'
-        : 'Cerraremos por renovaciones',
-      details: 'Lunes 8 de junio – Miércoles 10 de junio, 2026',
-      tagline: '¡Volveremos con un nuevo look!',
+        ? 'Cerrado por renovaciones'
+        : 'Cerraremos el martes por renovaciones',
+      details: 'Martes 30 de junio (renovaciones) + nuestro cierre habitual de los miércoles',
+      tagline: '¡Nos vemos el jueves 2 de julio!',
     },
     {
       flag: '🇰🇷',
       heading: isCurrentlyClosed
         ? '현재 리모델링으로 인해 휴업 중입니다'
-        : '리모델링을 위한 휴업 예정 안내',
-      details: '6월 8일 월요일 – 6월 10일 수요일, 2026',
-      tagline: '새로운 모습으로 돌아오겠습니다!',
+        : '화요일 리모델링으로 휴업합니다',
+      details: '6월 30일 화요일 (리모델링) + 매주 수요일 정기 휴무',
+      tagline: '7월 2일 목요일에 만나요!',
     },
   ];
 
