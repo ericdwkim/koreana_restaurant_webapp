@@ -15,7 +15,7 @@ export const MenuComponent = () => {
     return menuItems.map((item, index) => (
       <div key={index} className="flex justify-between items-center p-4 border-b border-gray-200">
         <div>
-          <h3 className="text-lg font-bold">{item.name}</h3>
+          <h3 className="text-lg font-bold">{item.code}. {item.name}</h3>
           <p>{item.shortdes}</p>
         </div>
         <span className="text-lg">{item.price}</span>
@@ -44,7 +44,12 @@ export const MenuComponent = () => {
       <div className="mt-4">
         {menuData.categories.map(
           (category: MenuCategory) =>
-            category.type === activeType && renderMenuItems(category.items)
+            category.type === activeType && (
+              <React.Fragment key={category.type}>
+                {category.note && <p className="text-center italic my-2">{category.note}</p>}
+                {renderMenuItems(category.items)}
+              </React.Fragment>
+            )
         )}
       </div>
     </div>
