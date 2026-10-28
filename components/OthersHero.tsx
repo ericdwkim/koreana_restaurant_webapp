@@ -20,7 +20,7 @@ export const OthersHero = ({ heroTitle, heroDescription }: OthersHeroProps) => {
             {/* Content */}
             <div className="relative z-20 container mx-auto px-4">
                 <h1 className="text-4xl font-bold text-center">{heroTitle}</h1>
-                <p className="text-lg mt-4 text-center">{heroDescription}</p>
+                <p className="text-lg mt-4 text-center whitespace-pre-line">{heroDescription}</p>
             </div>
         </div>
     );
